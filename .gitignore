@@ -11,6 +11,9 @@
 # Visual Studio cache directory
 .vs/
 
+# Github Assets
+Assets/Plugins/GitHub/*
+
 # Gradle cache directory
 .gradle/
 
