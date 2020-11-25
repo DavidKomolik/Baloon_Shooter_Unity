@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7361837739495511679}
   - component: {fileID: 7361837739495511678}
   - component: {fileID: 6842842955565490024}
+  - component: {fileID: 6658289303008376609}
   m_Layer: 0
   m_Name: Baloon
   m_TagString: Untagged
@@ -42,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7361837739495511665}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 3583434595591177450, guid: ea9ca4760ffb722439548fd2518c2354, type: 3}
 --- !u!23 &7361837739495511676
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -876546973899608171, guid: ea9ca4760ffb722439548fd2518c2354, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baloon: {fileID: 7361837739495511665}
+  player: {fileID: 0}
   spawnArea: {fileID: 27096824497154374, guid: 2d1fc2a4d697c2e4cbad428f2e9258c8, type: 3}
   throwForce: 60
 --- !u!54 &6842842955565490024
@@ -128,3 +130,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &6658289303008376609
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361837739495511665}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b79b3f7907fe8094d89f17add62277df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
