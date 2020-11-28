@@ -632,10 +632,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7361837739495511676, guid: ff46dcd1892f39a41af40307cfc198c6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 5bfa2cad2238d964ca1ba21f37f19ddf, type: 3}
     - target: {fileID: 7361837739495511677, guid: ff46dcd1892f39a41af40307cfc198c6, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3583434595591177450, guid: ea9ca4760ffb722439548fd2518c2354, type: 3}
+      objectReference: {fileID: 3583434595591177450, guid: 5bfa2cad2238d964ca1ba21f37f19ddf, type: 3}
     - target: {fileID: 7361837739495511678, guid: ff46dcd1892f39a41af40307cfc198c6, type: 3}
       propertyPath: player
       value: 
