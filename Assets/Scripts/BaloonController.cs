@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BaloonController : MonoBehaviour
 {
+
+    [SerializeField] ParticleSystem WaterSplasParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +25,13 @@ public class BaloonController : MonoBehaviour
             //hide baloon
 
             // play splash animation
+            Instantiate(WaterSplasParticle, transform.position, transform.rotation);
 
             // Destroy itself
             Destroy(gameObject);
-            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         }
 
         Debug.Log(collision.gameObject.name);
     }
+
 }

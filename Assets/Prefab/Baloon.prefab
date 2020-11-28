@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7361837739495511678}
   - component: {fileID: 6842842955565490024}
   - component: {fileID: 6658289303008376609}
+  - component: {fileID: 2051418361}
   m_Layer: 0
   m_Name: Baloon
   m_TagString: Untagged
@@ -96,7 +97,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7361837739495511678
 MonoBehaviour:
@@ -112,8 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baloon: {fileID: 7361837739495511665}
   player: {fileID: 0}
-  spawnArea: {fileID: 27096824497154374, guid: 2d1fc2a4d697c2e4cbad428f2e9258c8, type: 3}
+  spawnArea: {fileID: 0}
   throwForce: 60
+  throwYConstant: -0.1
   inBetweenPause: 2
 --- !u!54 &6842842955565490024
 Rigidbody:
@@ -123,7 +125,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7361837739495511665}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.66
   m_Drag: 0.4
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -150,3 +152,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2051418361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361837739495511665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8cec2e7b1331434d97950964fcea3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaterSplasParticle: {fileID: 0}

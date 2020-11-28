@@ -8,13 +8,25 @@ public class Timer : MonoBehaviour
     [SerializeField] GameObject baloon;
     [SerializeField] GameObject player;
     [SerializeField] GameObject spawnArea;
-    [SerializeField] float throwForce = 100;
-    private float throwYConstant = -0.1f;
+    [SerializeField] float throwForce = 60;
+    public float throwYConstant = -0.1f;
     [SerializeField] float inBetweenPause = 2;
+    private Difficulty difficulty = Difficulty.EASY;
+    private float zSpawnOffset = 2;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.HasKey("Difficulty"))
+        {
+            difficulty = (Difficulty)PlayerPrefs.GetInt("Difficulty");
+            setHardDifficulty();
+            Debug.Log("Difficulty set to : " + difficulty);
+        }
+        else
+        {
+            setEasyDifficulty();
+        }
         StartCoroutine(spawnNewBalloon());
         spawnArea.GetComponent<MeshRenderer>().enabled = false;
     }
@@ -46,7 +58,7 @@ public class Timer : MonoBehaviour
         Vector3 sp = spawnArea.GetComponent<Collider>().bounds.extents;
         float randXLocation = (float)getRandomNumber(spawnArea.transform.position.x - sp.x, spawnArea.transform.position.x + sp.x);
         float randYLocation = (float)getRandomNumber(spawnArea.transform.position.y - sp.y, spawnArea.transform.position.y + sp.y);
-        Vector3 spawnPosition = new Vector3(randXLocation, randYLocation, spawnArea.transform.position.z);
+        Vector3 spawnPosition = new Vector3(randXLocation, randYLocation, spawnArea.transform.position.z + zSpawnOffset);
         Quaternion rotation = new Quaternion();
         GameObject newBaloon = Instantiate(baloon, spawnPosition, Quaternion.identity);
         return new Tuple<bool, GameObject>(true, newBaloon);
@@ -65,5 +77,23 @@ public class Timer : MonoBehaviour
     {
         System.Random random = new System.Random();
         return random.NextDouble() * (maximum - minimum) + minimum;
+    }
+
+    public void setEasyDifficulty()
+    {
+        throwForce = 60;
+        inBetweenPause = 2;
+        throwYConstant = -0.1f;
+        Vector3 scale = new Vector3(1,1,1);
+        baloon.transform.localScale = scale;
+    }
+
+    public void setHardDifficulty()
+    {
+        throwForce = 100;
+        inBetweenPause = 1.3f;
+        throwYConstant = -0.1f;
+        Vector3 scale = new Vector3(0.7f, 0.7f, 0.7f);
+        baloon.transform.localScale = scale;
     }
 }
