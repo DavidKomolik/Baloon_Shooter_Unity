@@ -61,6 +61,7 @@ public class Timer : MonoBehaviour
         Vector3 spawnPosition = new Vector3(randXLocation, randYLocation, spawnArea.transform.position.z + zSpawnOffset);
         Quaternion rotation = new Quaternion();
         GameObject newBaloon = Instantiate(baloon, spawnPosition, Quaternion.identity);
+        newBaloon.GetComponent<MeshRenderer>().material.SetColor("_Color", UnityEngine.Random.ColorHSV(0, 1, 0.7f, 1));
         return new Tuple<bool, GameObject>(true, newBaloon);
     }
 

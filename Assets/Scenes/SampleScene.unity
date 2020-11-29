@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: f7e0deb681c655a4ab9ad845a182efa4, type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 249101504}
 --- !u!196 &4
 NavMeshSettings:
@@ -485,16 +485,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4399724542279590, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399724542279590, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399724542279590, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399724542279590, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8401141
       objectReference: {fileID: 0}
     - target: {fileID: 4399724542279590, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4
+      value: 9.63
       objectReference: {fileID: 0}
     - target: {fileID: 4399724542279590, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 64.514
+      value: 63.73
       objectReference: {fileID: 0}
     - target: {fileID: 4399724542279590, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -567,6 +579,22 @@ PrefabInstance:
     - target: {fileID: 114955289662483194, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136200420258760052, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_Height
+      value: 20.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 136200420258760052, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_Radius
+      value: 1.8934484
+      objectReference: {fileID: 0}
+    - target: {fileID: 136200420258760052, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_Center.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 136200420258760052, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_Center.z
+      value: -1.35
       objectReference: {fileID: 0}
     - target: {fileID: 199081602531183990, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
       propertyPath: m_Materials.Array.size
