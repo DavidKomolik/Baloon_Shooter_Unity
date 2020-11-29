@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7361837739495511677}
   - component: {fileID: 7361837739495511676}
   - component: {fileID: 7361837739495511679}
-  - component: {fileID: 7361837739495511678}
   - component: {fileID: 6842842955565490024}
   - component: {fileID: 6658289303008376609}
   - component: {fileID: 2051418361}
@@ -99,24 +98,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7361837739495511678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7361837739495511665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db602672bcdc0404f94a24926e3ddec9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baloon: {fileID: 7361837739495511665}
-  player: {fileID: 0}
-  spawnArea: {fileID: 0}
-  throwForce: 60
-  throwYConstant: -0.1
-  inBetweenPause: 2
 --- !u!54 &6842842955565490024
 Rigidbody:
   m_ObjectHideFlags: 0

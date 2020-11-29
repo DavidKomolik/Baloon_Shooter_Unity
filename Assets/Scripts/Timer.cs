@@ -20,7 +20,14 @@ public class Timer : MonoBehaviour
         if (PlayerPrefs.HasKey("Difficulty"))
         {
             difficulty = (Difficulty)PlayerPrefs.GetInt("Difficulty");
-            setHardDifficulty();
+            if (difficulty == Difficulty.HARD)
+            {
+                setHardDifficulty();
+            } else
+            {
+                setEasyDifficulty();
+            }
+            
             Debug.Log("Difficulty set to : " + difficulty);
         }
         else
@@ -41,16 +48,22 @@ public class Timer : MonoBehaviour
     IEnumerator spawnNewBalloon()
     {
         yield return new WaitForSeconds(inBetweenPause);
-
-        // Spawn new object
-        Tuple<bool, GameObject> objectSpawn = spawnNewGameObject();
-        if (!objectSpawn.Item1)
+        while(true)
         {
-            Debug.LogError("Failed to spawn object");
+            Debug.Log("Spawned baloon");
+            // Spawn new object
+            Tuple<bool, GameObject> objectSpawn = spawnNewGameObject();
+            if (!objectSpawn.Item1)
+            {
+                Debug.LogError("Failed to spawn object");
+            }
+
+            // Throw it
+            throwObject(objectSpawn.Item2);
+
+            yield return new WaitForSeconds(inBetweenPause);
         }
 
-        // Throw it
-        throwObject(objectSpawn.Item2);
     }
 
     private Tuple<bool, GameObject> spawnNewGameObject()
@@ -85,7 +98,7 @@ public class Timer : MonoBehaviour
         throwForce = 60;
         inBetweenPause = 2;
         throwYConstant = -0.1f;
-        Vector3 scale = new Vector3(1,1,1);
+        Vector3 scale = new Vector3(2,2,2);
         baloon.transform.localScale = scale;
     }
 

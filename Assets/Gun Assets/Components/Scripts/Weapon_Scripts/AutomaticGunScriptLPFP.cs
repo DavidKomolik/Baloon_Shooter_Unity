@@ -310,14 +310,14 @@ public class AutomaticGunScriptLPFP : MonoBehaviour {
 		if (currentAmmo == 0) 
 		{
 			//Show out of ammo text
-			currentWeaponText.text = "OUT OF AMMO";
+			//currentWeaponText.text = "OUT OF AMMO";
 			//Toggle bool
-			outOfAmmo = true;
-			//Auto reload if true
-			if (autoReload == true && !isReloading) 
-			{
-				StartCoroutine (AutoReload ());
-			}
+			//outOfAmmo = true;
+			////Auto reload if true
+			//if (autoReload == true && !isReloading) 
+			//{
+			//	StartCoroutine (AutoReload ());
+			//}
 		} 
 		else 
 		{

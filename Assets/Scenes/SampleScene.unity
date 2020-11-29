@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 892ad97a560646945a6128378a149580, type: 2}
   m_LightingSettings: {fileID: 249101504}
 --- !u!196 &4
 NavMeshSettings:
@@ -138,6 +138,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 27096824497154374, guid: 2d1fc2a4d697c2e4cbad428f2e9258c8, type: 3}
   m_PrefabInstance: {fileID: 27096824599814077}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &174176000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174175995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db602672bcdc0404f94a24926e3ddec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baloon: {fileID: 221230844}
+  player: {fileID: 558326200}
+  spawnArea: {fileID: 174175995}
+  throwForce: 60
+  throwYConstant: -0.1
+  inBetweenPause: 2
 --- !u!1 &195738650
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +334,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215433148}
   m_Mesh: {fileID: 4300000, guid: 09f6686f757cb4b0a975a2f6f5f1c9ff, type: 3}
+--- !u!1 &221230844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7361837739495511665, guid: ff46dcd1892f39a41af40307cfc198c6, type: 3}
+  m_PrefabInstance: {fileID: 669252943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &249101504
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -480,6 +503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1971677469189286, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4399724542279590, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -606,6 +633,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+--- !u!1 &558326200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778574915019774, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+  m_PrefabInstance: {fileID: 484777685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &669252943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -665,14 +697,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7361837739495511678, guid: ff46dcd1892f39a41af40307cfc198c6, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 195738650}
-    - target: {fileID: 7361837739495511678, guid: ff46dcd1892f39a41af40307cfc198c6, type: 3}
-      propertyPath: spawnArea
-      value: 
-      objectReference: {fileID: 174175995}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff46dcd1892f39a41af40307cfc198c6, type: 3}
 --- !u!1 &704596761
