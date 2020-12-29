@@ -137,7 +137,7 @@ namespace FPSControllerLPFP
         {
             // FixedUpdate is used instead of Update because this code is dealing with physics and smoothing.
             RotateCameraAndCharacter();
-            MoveCharacter();
+            //MoveCharacter();
             _isGrounded = false;
         }
 			
@@ -205,6 +205,8 @@ namespace FPSControllerLPFP
 
         private void MoveCharacter()
         {
+            if (false)
+            {
             var direction = new Vector3(input.Move, 0f, input.Strafe).normalized;
             var worldDirection = transform.TransformDirection(direction);
             var velocity = worldDirection * (input.Run ? runningSpeed : walkingSpeed);
@@ -221,6 +223,8 @@ namespace FPSControllerLPFP
             var rigidbodyVelocity = _rigidbody.velocity;
             var force = new Vector3(smoothX - rigidbodyVelocity.x, 0f, smoothZ - rigidbodyVelocity.z);
             _rigidbody.AddForce(force, ForceMode.VelocityChange);
+            }
+            
         }
 
         private bool CheckCollisionsWithWalls(Vector3 velocity)

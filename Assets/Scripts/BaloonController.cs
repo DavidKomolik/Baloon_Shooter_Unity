@@ -22,10 +22,10 @@ public class BaloonController : MonoBehaviour
     {
         if (collision.gameObject.name.Contains("Bullet"))
         {
-            //hide baloon
-
             // play splash animation
             Instantiate(WaterSplasParticle, transform.position, transform.rotation);
+
+            // Play splash sound
 
             // Destroy itself
             Destroy(gameObject);
