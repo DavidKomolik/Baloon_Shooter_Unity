@@ -6,10 +6,13 @@ public class BaloonController : MonoBehaviour
 {
 
     [SerializeField] ParticleSystem WaterSplasParticle;
+    [SerializeField] private ScoreManager scoreManager;
+    public AudioSource splashAudioSource;
+    [SerializeField] public AudioClip splashSound;
     // Start is called before the first frame update
     void Start()
     {
-        
+        splashAudioSource.clip = splashSound;
     }
 
     // Update is called once per frame
@@ -26,12 +29,17 @@ public class BaloonController : MonoBehaviour
             Instantiate(WaterSplasParticle, transform.position, transform.rotation);
 
             // Play splash sound
+            splashAudioSource.Play();
 
-            // Destroy itself
+            // Increase score
+            scoreManager.increaseCurrentScore();
+
+            // Destroy
             Destroy(gameObject);
+            //Debug.Log(collision.gameObject.name);
         }
 
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
     }
 
 }

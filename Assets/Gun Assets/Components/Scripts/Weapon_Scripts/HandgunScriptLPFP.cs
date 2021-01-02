@@ -447,16 +447,16 @@ public class HandgunScriptLPFP : MonoBehaviour {
 			}
 		}
 
-		//Walking when pressing down WASD keys
-		if (Input.GetKey (KeyCode.W) && !isRunning || 
-			Input.GetKey (KeyCode.A) && !isRunning || 
-			Input.GetKey (KeyCode.S) && !isRunning || 
-			Input.GetKey (KeyCode.D) && !isRunning) 
-		{
-			anim.SetBool ("Walk", true);
-		} else {
-			anim.SetBool ("Walk", false);
-		}
+		////Walking when pressing down WASD keys
+		//if (Input.GetKey (KeyCode.W) && !isRunning || 
+		//	Input.GetKey (KeyCode.A) && !isRunning || 
+		//	Input.GetKey (KeyCode.S) && !isRunning || 
+		//	Input.GetKey (KeyCode.D) && !isRunning) 
+		//{
+		//	anim.SetBool ("Walk", true);
+		//} else {
+		//	anim.SetBool ("Walk", false);
+		//}
 
 		//Running when pressing down W and Left Shift key
 		if ((Input.GetKey (KeyCode.W) && Input.GetKey (KeyCode.LeftShift))) 

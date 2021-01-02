@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] GameObject baloon;
-    [SerializeField] GameObject player;
-    [SerializeField] GameObject spawnArea;
-    [SerializeField] float throwForce = 60;
+    [SerializeField] private GameObject baloon;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject spawnArea;
+    [SerializeField] private float throwForce = 60;
     public float throwYConstant = -0.1f;
     [SerializeField] float inBetweenPause = 2;
     private Difficulty difficulty = Difficulty.EASY;
@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
         if (PlayerPrefs.HasKey("Difficulty"))
         {
             difficulty = (Difficulty)PlayerPrefs.GetInt("Difficulty");
-            if (difficulty == Difficulty.HARD)
+            if (difficulty == Difficulty.HARD || difficulty == Difficulty.MEDIUM)
             {
                 setHardDifficulty();
             } else
