@@ -40,7 +40,7 @@ namespace FPSControllerLPFP
 
 		[Header("Look Settings")]
         [Tooltip("Rotation speed of the fps controller."), SerializeField]
-        private float mouseSensitivity = 7f;
+        private float mouseSensitivity = 1f;
 
         [Tooltip("Approximately the amount of time it will take for the fps controller to reach maximum rotation speed."), SerializeField]
         private float rotationSmoothness = 0.05f;
@@ -166,7 +166,7 @@ namespace FPSControllerLPFP
         /// Returns the target rotation of the camera around the y axis with no smoothing.
         private float RotationXRaw
         {
-            get { return input.RotateX * mouseSensitivity; }
+            get { return input.RotateX/5 * mouseSensitivity; }
         }
 			
         /// Returns the target rotation of the camera around the x axis with no smoothing.

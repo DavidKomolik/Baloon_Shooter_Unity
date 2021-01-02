@@ -7,6 +7,7 @@ public class GameInitializer : MonoBehaviour
     public GameObject CurrentAmmoText;
     public GameObject AmmoDivider;
     public GameObject TotalAmmoText;
+    public HandgunScriptLPFP handgunScriptLPFP;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +20,24 @@ public class GameInitializer : MonoBehaviour
                 CurrentAmmoText.SetActive(true);
                 AmmoDivider.SetActive(true);
                 TotalAmmoText.SetActive(true);
+                handgunScriptLPFP.autoReload = false;
+                handgunScriptLPFP.reloadEnabled = true;
             }
-            else
+            else if(difficulty == Difficulty.EASY)
             {
                 CurrentAmmoText.SetActive(false);
                 AmmoDivider.SetActive(false);
                 TotalAmmoText.SetActive(false);
+                handgunScriptLPFP.reloadEnabled = false;
+            }
+            else
+            {
+                // Medium
+                CurrentAmmoText.SetActive(true);
+                AmmoDivider.SetActive(true);
+                TotalAmmoText.SetActive(true);
+                handgunScriptLPFP.autoReload = true;
+                handgunScriptLPFP.reloadEnabled = true;
             }
         }
     }

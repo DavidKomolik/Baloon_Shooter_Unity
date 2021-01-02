@@ -46,6 +46,8 @@ public class HandgunScriptLPFP : MonoBehaviour {
 	//Eanbles auto reloading when out of ammo
 	[Tooltip("Enables auto reloading when out of ammo.")]
 	public bool autoReload;
+
+	public bool reloadEnabled = false;
 	//Delay between shooting last bullet and reloading
 	public float autoReloadDelay;
 	//Check if reloading
@@ -298,7 +300,7 @@ public class HandgunScriptLPFP : MonoBehaviour {
 		}
 
 		//If out of ammo
-		if (currentAmmo == 0) 
+		if (currentAmmo == 0 && reloadEnabled) 
 		{
 			//Show out of ammo text
 			currentWeaponText.text = "OUT OF AMMO";

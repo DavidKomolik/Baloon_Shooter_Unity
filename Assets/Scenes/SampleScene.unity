@@ -171,6 +171,7 @@ MonoBehaviour:
   CurrentAmmoText: {fileID: 2000936814}
   AmmoDivider: {fileID: 271554916}
   TotalAmmoText: {fileID: 1469972799}
+  handgunScriptLPFP: {fileID: 482805683}
 --- !u!114 &174176002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,6 +607,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410842855}
   m_CullTransparentMesh: 0
+--- !u!114 &482805683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114919995911110234, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
+  m_PrefabInstance: {fileID: 642222237}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56ac14cb72efeb4b92cf5cb025a97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &484777685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -737,6 +749,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114985937948325432, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: mouseSensitivity
+      value: 3.4
+      objectReference: {fileID: 0}
     - target: {fileID: 136200420258760052, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
       propertyPath: m_Height
       value: 20.13
@@ -830,7 +846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4523690870132846, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.55
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 4523690870132846, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -870,11 +886,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 82168095860958118, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 0.219
       objectReference: {fileID: 0}
     - target: {fileID: 82643139687027346, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 108631437318191936, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_Color.b
@@ -888,9 +904,17 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.48627448
       objectReference: {fileID: 0}
+    - target: {fileID: 114352007083497230, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
+      propertyPath: mouseSensitivity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114919995911110234, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
+      propertyPath: maxSwayAmount
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 136351756376160448, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_Height
-      value: 15.29
+      value: 20.6
       objectReference: {fileID: 0}
     - target: {fileID: 199639806012830216, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
       propertyPath: m_Materials.Array.size
@@ -1513,7 +1537,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d2b3d6a5934dd9d438332654466f5c0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
