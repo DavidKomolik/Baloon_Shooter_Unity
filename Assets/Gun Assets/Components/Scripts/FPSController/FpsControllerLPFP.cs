@@ -135,6 +135,11 @@ namespace FPSControllerLPFP
         /// Processes the character movement and the camera rotation every fixed framerate frame.
         private void FixedUpdate()
         {
+            if (PauseMenu.isPaused)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                return;
+            }
             // FixedUpdate is used instead of Update because this code is dealing with physics and smoothing.
             RotateCameraAndCharacter();
             //MoveCharacter();
@@ -144,6 +149,10 @@ namespace FPSControllerLPFP
         /// Moves the camera to the character, processes jumping and plays sounds every frame.
         private void Update()
         {
+            if (PauseMenu.isPaused)
+            {
+                return;
+            }
 			arms.position = transform.position + transform.TransformVector(armPosition);
             Jump();
             PlayFootstepSounds();

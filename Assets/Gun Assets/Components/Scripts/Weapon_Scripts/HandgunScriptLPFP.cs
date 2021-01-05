@@ -184,6 +184,10 @@ public class HandgunScriptLPFP : MonoBehaviour {
 	}
 
 	private void LateUpdate () {
+		if (PauseMenu.isPaused)
+		{
+			return;
+		}
 		//Weapon sway
 		if (weaponSway == true) {
 			float movementX = -Input.GetAxis ("Mouse X") * swayAmount;
@@ -203,7 +207,10 @@ public class HandgunScriptLPFP : MonoBehaviour {
 	}
 	
 	private void Update () {
-
+        if (PauseMenu.isPaused)
+        {
+			return;
+        }
 		//Aiming
 		//Toggle camera FOV when right click is held down
 		if(Input.GetButton("Fire2") && !isReloading && !isRunning && !isInspecting) 

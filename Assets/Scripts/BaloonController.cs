@@ -5,10 +5,10 @@ using UnityEngine;
 public class BaloonController : MonoBehaviour
 {
 
-    [SerializeField] ParticleSystem WaterSplasParticle;
+    [SerializeField] private ParticleSystem WaterSplasParticle;
     [SerializeField] private ScoreManager scoreManager;
-    public AudioSource splashAudioSource;
-    [SerializeField] public AudioClip splashSound;
+    [SerializeField] private AudioSource splashAudioSource;
+    [SerializeField] private AudioClip splashSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,28 +18,31 @@ public class BaloonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name.Contains("Bullet"))
+        if (collision.gameObject.name.Contains("SpawnArea"))
         {
-            // play splash animation
-            Instantiate(WaterSplasParticle, transform.position, transform.rotation);
-
-            // Play splash sound
-            splashAudioSource.Play();
-
-            // Increase score
-            scoreManager.increaseCurrentScore();
-
-            // Destroy
-            Destroy(gameObject);
-            //Debug.Log(collision.gameObject.name);
+            return;
         }
 
+        // Play splash animation
+        Instantiate(WaterSplasParticle, transform.position, transform.rotation);
+
+        // Play splash sound
+        AudioSource.PlayClipAtPoint(splashSound, transform.position);
+
+        if (collision.gameObject.name.Contains("Bullet"))
+        {
+            // Increase score
+            scoreManager.increaseCurrentScore();
+        }
+
+        // Destroy
+        Destroy(gameObject);
         //Debug.Log(collision.gameObject.name);
     }
-
 }
+
