@@ -5,3 +5,9 @@ enum Difficulty
     MEDIUM,
     HARD
 }
+
+enum BallonType
+{
+    NORMAL,
+    SLOWDOWN
+}

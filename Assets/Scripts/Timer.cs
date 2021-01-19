@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject spawnArea;
     [SerializeField] private float throwForce = 60;
-    public float throwYConstant = -0.1f;
+    public float maxThrowYConstant = -0.1f;
     [SerializeField] float inBetweenPause = 2;
     private Difficulty difficulty = Difficulty.EASY;
     private float zSpawnOffset = 2;
@@ -63,7 +63,6 @@ public class Timer : MonoBehaviour
 
             yield return new WaitForSeconds(inBetweenPause);
         }
-
     }
 
     private Tuple<bool, GameObject> spawnNewGameObject()
@@ -82,7 +81,8 @@ public class Timer : MonoBehaviour
     {
         Debug.Log("Thrown baloon");
         float posXDiff = player.transform.position.x - balloon.transform.position.x;
-        float posYDiff = throwYConstant*(balloon.transform.position.y - player.transform.position.y);
+        double throwYConstant = getRandomNumber(-0.1d, maxThrowYConstant);
+        float posYDiff = (float)(throwYConstant * (balloon.transform.position.y - player.transform.position.y));
         Vector3 throwDirection = new Vector3(posXDiff, posYDiff, throwForce);
         balloon.GetComponent<Rigidbody>().AddForce(throwDirection, ForceMode.Impulse);
     }
@@ -97,7 +97,7 @@ public class Timer : MonoBehaviour
     {
         throwForce = 60;
         inBetweenPause = 2;
-        throwYConstant = -0.1f;
+        maxThrowYConstant = -0.1f;
         Vector3 scale = new Vector3(2,2,2);
         baloon.transform.localScale = scale;
     }
@@ -106,7 +106,7 @@ public class Timer : MonoBehaviour
     {
         throwForce = 100;
         inBetweenPause = 1.3f;
-        throwYConstant = -0.1f;
+        maxThrowYConstant = -0.5f;
         Vector3 scale = new Vector3(0.7f, 0.7f, 0.7f);
         baloon.transform.localScale = scale;
     }
