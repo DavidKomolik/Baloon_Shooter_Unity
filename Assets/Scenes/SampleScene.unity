@@ -1446,18 +1446,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 221230845, guid: ff46dcd1892f39a41af40307cfc198c6, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 636839778, guid: ff46dcd1892f39a41af40307cfc198c6, type: 3}
-      propertyPath: ColorModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2051418361, guid: ff46dcd1892f39a41af40307cfc198c6, type: 3}
-      propertyPath: goldMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 36adc7d815074f44695df6d578996aae, type: 2}
     - target: {fileID: 2051418361, guid: ff46dcd1892f39a41af40307cfc198c6, type: 3}
       propertyPath: scoreManager
       value: 

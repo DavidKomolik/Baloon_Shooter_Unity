@@ -21,8 +21,6 @@ public class BaloonController : MonoBehaviour
         {
             type = BallonType.SLOWDOWN;
             GetComponent<MeshRenderer>().material = goldMaterial;
-            GetComponent<Light>().color = goldMaterial.color;
-            GetComponent<Light>().intensity = 10;
         }
     }
 
